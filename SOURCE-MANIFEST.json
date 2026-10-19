@@ -29,11 +29,6 @@
       "source": "plugins/ava-virtuoso/vendor/virtuoso-bridge-lite/src/virtuoso_bridge/resources/.env_template",
       "destination": "config/bridge.env.template",
       "policy": "byte-for-byte copy; contains placeholders, not secrets"
-    },
-    {
-      "source": "AVA-V1 runtime/scripts/launch.sh interpreter-selection pattern",
-      "destination": "scripts/bridge.sh",
-      "policy": "minimal direct BridgeLite launcher adapted for S; no AVA runtime or adapter"
     }
   ],
   "excluded_v1_components": [

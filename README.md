@@ -12,7 +12,6 @@ custom TypeScript Bridge tools, and the AVA Python runtime.
 - Minimal OpenCode agent and permission configuration
 - Minimal Python 3.11 dependency project
 - Bridge configuration template plus isolated `work/` and `artifacts/` areas
-- Transparent `scripts/bridge.sh` launcher for the S environment
 
 ## Layout
 
@@ -27,7 +26,6 @@ AVA-V0/
 │   ├── agents/ava-v0.md
 │   └── skills/{virtuoso,spectre,netlist,optimizer}/
 ├── config/bridge.env.template
-├── scripts/bridge.sh
 ├── vendor/
 │   ├── bridge-provenance.json
 │   └── virtuoso-bridge-lite/
@@ -37,30 +35,24 @@ AVA-V0/
 
 ## S quick start
 
-If S already has a compatible `virtuoso-bridge` executable, clone this repo and
-run it directly through the transparent launcher:
-
-```bash
-./scripts/bridge.sh --help
-./scripts/bridge.sh status
-```
-
-The launcher prefers `.venv/bin/virtuoso-bridge`, then
-`AVA_V0_BRIDGE`, then an existing `virtuoso-bridge` on `PATH`. It can also use
-Python 3.11 plus the vendored source through `AVA_V0_PYTHON`.
-
-If S does not already have the required Python packages, create the project
-environment from the lock:
+Clone the repository and create the locked project environment:
 
 ```bash
 uv sync --frozen
-./scripts/bridge.sh init user@host
-./scripts/bridge.sh start
-./scripts/bridge.sh status
+```
+
+Use VirtuosoBridgeLite directly through `uv`; AVA-V0 adds no launcher or
+runtime wrapper:
+
+```bash
+uv run virtuoso-bridge --help
+uv run virtuoso-bridge init user@host
+uv run virtuoso-bridge start
+uv run virtuoso-bridge status
 ```
 
 For a jump host, initialize with
-`./scripts/bridge.sh init user@host -J user@jump`.
+`uv run virtuoso-bridge init user@host -J user@jump`.
 The generated configuration is local and ignored by Git. Do not copy the
 template unchanged: `init` fills the port placeholders and writes the supported
 user-level configuration.

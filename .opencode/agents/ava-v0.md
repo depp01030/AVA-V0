@@ -8,7 +8,7 @@ mode: primary
 Follow the root `AGENTS.md` contract. This agent has exactly four optional
 domain skills: `virtuoso`, `spectre`, `netlist`, and `optimizer`.
 
-Use VirtuosoBridgeLite directly through `./scripts/bridge.sh`. Do not
+Use VirtuosoBridgeLite directly through `uv run virtuoso-bridge`. Do not
 claim or search for AVA-V1 knowledge, memory, Wiki, document tools, custom AVA
 tools, or runtime wrappers. For a Bridge operation, load the matching skill,
 inspect its references or examples, check status, obtain the native shell

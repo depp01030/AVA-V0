@@ -7,9 +7,7 @@
     "*": "deny",
     "bash": {
       "*": "ask",
-      "./scripts/bridge.sh status": "allow",
-      ".venv/bin/virtuoso-bridge status": "allow",
-      "./.venv/bin/virtuoso-bridge status": "allow"
+      "uv run virtuoso-bridge status": "allow"
     },
     "skill": {
       "*": "deny",
@@ -34,7 +32,6 @@
       "vendor/virtuoso-bridge-lite/*": "allow",
       "vendor/virtuoso-bridge-lite/**/*": "allow",
       "config/bridge.env.template": "allow",
-      "scripts/*": "allow",
       "work/*": "allow",
       "work/**/*": "allow",
       "artifacts/*": "allow",
@@ -46,7 +43,6 @@
       "*/.env": "deny",
       ".opencode/*": "deny",
       ".opencode/**/*": "deny",
-      "scripts/*": "deny",
       "vendor/*": "deny",
       "vendor/**/*": "deny",
       "opencode.json": "deny"
