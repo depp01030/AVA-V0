@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "upstream_url": "https://github.com/Arcadia-1/virtuoso-bridge-lite",
+  "upstream_revision": "3fbe6865a10ab4a1d4f530967930143409981555",
+  "package_version": "0.8.0",
+  "content_tree_sha256": "069a43fe000a907dcc7cafb1ebb35eebef23e6c8c0bacb6ec00727b710937d2f",
+  "inventory_algorithm": "sorted path/bytes/sha256 canonical JSON; excludes .git, local env/cache, .pytest_cache, __pycache__, *.pyc, *.egg-info, .DS_Store, build and dist",
+  "legacy_source_revision": "3fbe6865a10ab4a1d4f530967930143409981555",
+  "legacy_content_tree_sha256": "069a43fe000a907dcc7cafb1ebb35eebef23e6c8c0bacb6ec00727b710937d2f",
+  "superseded_content_tree_sha256": "b937b639315ff17fb780e0f326e588d8df230064b3ad2ef756921982a6d51864",
+  "provenance_corrected_at": "2026-10-04",
+  "provenance_correction": "Corrected an import-time identity that included generated *.egg-info files. The 261 Git-delivered vendor files match the recorded upstream revision byte-for-byte; no vendor bytes changed.",
+  "imported_at": "2026-09-06",
+  "import_method": "git archive from an existing clean local checkout",
+  "local_patches": [],
+  "live_virtuoso_validation": "not_run",
+  "license_file": "virtuoso-bridge-lite/LICENSE"
+}

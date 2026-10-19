@@ -1,0 +1,48 @@
+{
+  "schema_version": "1",
+  "created_at": "2026-10-19",
+  "source_project": "AVA-V1 workspace directory ava",
+  "source_revision": "97e2e55bea905b909475175870064390eb3b5a94",
+  "target": {
+    "role": "S OpenCode/AVA client host",
+    "topology": "S -> R relay -> C Virtuoso/RAMIC",
+    "platform": "not recorded in source evidence",
+    "delivery": "Git source repository; no platform-specific virtual environment"
+  },
+  "components": [
+    {
+      "source": "plugins/ava-virtuoso/vendor/virtuoso-bridge-lite",
+      "destination": "vendor/virtuoso-bridge-lite",
+      "policy": "complete reviewed vendor tree excluding generated artifacts"
+    },
+    {
+      "source": "plugins/ava-virtuoso/vendor/bridge-provenance.json",
+      "destination": "vendor/bridge-provenance.json",
+      "policy": "byte-for-byte copy"
+    },
+    {
+      "source": "plugins/ava-virtuoso/vendor/virtuoso-bridge-lite/skills",
+      "destination": ".opencode/skills",
+      "policy": "byte-for-byte copies of virtuoso, spectre, netlist, and optimizer"
+    },
+    {
+      "source": "plugins/ava-virtuoso/vendor/virtuoso-bridge-lite/src/virtuoso_bridge/resources/.env_template",
+      "destination": "config/bridge.env.template",
+      "policy": "byte-for-byte copy; contains placeholders, not secrets"
+    },
+    {
+      "source": "AVA-V1 runtime/scripts/launch.sh interpreter-selection pattern",
+      "destination": "scripts/bridge.sh",
+      "policy": "minimal direct BridgeLite launcher adapted for S; no AVA runtime or adapter"
+    }
+  ],
+  "excluded_v1_components": [
+    "AVA Python runtime and ava.cli",
+    "ava-virtuoso adapter, lifecycle wrapper, and TypeScript tools",
+    "knowledge, index, memory, Wiki, OCR, document, and spreadsheet systems",
+    "V1 OpenCode agent and broad plugin configuration",
+    "V1 virtual environment, runtime lock, local configuration, data, and generated artifacts"
+  ],
+  "build_status": "built",
+  "live_s_r_c_validation": "not_run"
+}

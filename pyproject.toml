@@ -1,0 +1,27 @@
+[project]
+name = "ava-v0"
+version = "0.1.0"
+description = "Minimal OpenCode agent environment for VirtuosoBridgeLite"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "virtuoso-bridge",
+    # Match the dependency closure currently used by AVA-V1's reviewed
+    # BridgeLite 0.8.0 environment. Upgrade these only with explicit tests.
+    "annotated-types==0.8.0",
+    "beautifulsoup4==4.15.0",
+    "markdownify==1.2.3",
+    "pydantic==2.13.5",
+    "pydantic-core==2.46.5",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "six==1.17.0",
+    "soupsieve==2.9.2",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+virtuoso-bridge = { path = "vendor/virtuoso-bridge-lite", editable = true }
