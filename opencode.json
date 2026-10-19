@@ -7,7 +7,7 @@
     "*": "deny",
     "bash": {
       "*": "ask",
-      "uv run virtuoso-bridge status": "allow"
+      "virtuoso-bridge status": "allow"
     },
     "skill": {
       "*": "deny",
@@ -22,8 +22,6 @@
       "*/.env": "deny",
       "AGENTS.md": "allow",
       "README.md": "allow",
-      "pyproject.toml": "allow",
-      "uv.lock": "allow",
       "opencode.json": "allow",
       ".opencode/agents/*": "allow",
       ".opencode/skills/*": "allow",
@@ -32,6 +30,8 @@
       "vendor/virtuoso-bridge-lite/*": "allow",
       "vendor/virtuoso-bridge-lite/**/*": "allow",
       "config/bridge.env.template": "allow",
+      "offline/bundle-manifest.json": "allow",
+      "offline/SHA256SUMS": "allow",
       "work/*": "allow",
       "work/**/*": "allow",
       "artifacts/*": "allow",

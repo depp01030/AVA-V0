@@ -6,8 +6,9 @@
   "target": {
     "role": "S OpenCode/AVA client host",
     "topology": "S -> R relay -> C Virtuoso/RAMIC",
-    "platform": "not recorded in source evidence",
-    "delivery": "Git source repository; no platform-specific virtual environment"
+    "platform": "Ubuntu 24.04 x86_64, glibc 2.39, CPython 3.11",
+    "network": "offline",
+    "delivery": "Git source repository with target-specific offline wheelhouse; virtual environment is created on S"
   },
   "components": [
     {
@@ -29,6 +30,11 @@
       "source": "plugins/ava-virtuoso/vendor/virtuoso-bridge-lite/src/virtuoso_bridge/resources/.env_template",
       "destination": "config/bridge.env.template",
       "policy": "byte-for-byte copy; contains placeholders, not secrets"
+    },
+    {
+      "source": "AVA-V1 reviewed CPython 3.11 manylinux2014 x86_64 offline artifacts",
+      "destination": "offline/wheelhouse",
+      "policy": "BridgeLite 0.8.0 required dependency closure only; hash-pinned and installed without an index"
     }
   ],
   "excluded_v1_components": [
@@ -39,5 +45,7 @@
     "V1 virtual environment, runtime lock, local configuration, data, and generated artifacts"
   ],
   "build_status": "built",
+  "offline_bundle_id": "ava-v0-s-ubuntu24.04-x86_64-cp311-20261019",
+  "clean_target_validation": "not_run_docker_daemon_unavailable",
   "live_s_r_c_validation": "not_run"
 }

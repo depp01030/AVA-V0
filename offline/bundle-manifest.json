@@ -1,0 +1,164 @@
+{
+  "schema_version": "1",
+  "bundle_id": "ava-v0-s-ubuntu24.04-x86_64-cp311-20261019",
+  "created_at": "2026-10-19",
+  "status": "built",
+  "source": {
+    "ava_v0_base_revision": "66b690625d5d394ddcf3c4f9bef2c39925db8dc7",
+    "ava_v1_revision": "97e2e55bea905b909475175870064390eb3b5a94",
+    "virtuoso_bridge_upstream_revision": "3fbe6865a10ab4a1d4f530967930143409981555",
+    "virtuoso_bridge_tree_sha256": "069a43fe000a907dcc7cafb1ebb35eebef23e6c8c0bacb6ec00727b710937d2f"
+  },
+  "target": {
+    "role": "S OpenCode/AVA client host",
+    "os": "Ubuntu",
+    "release": "24.04",
+    "architecture": "x86_64",
+    "libc": "glibc 2.39",
+    "python": "CPython 3.11",
+    "network": "offline",
+    "required_existing_tools": [
+      "python3.11",
+      "uv 0.12.2 or compatible",
+      "sha256sum"
+    ]
+  },
+  "installation": {
+    "entrypoint": "offline/install.sh",
+    "environment": ".venv",
+    "runtime_command": "virtuoso-bridge",
+    "source_mode": "editable install from vendor/virtuoso-bridge-lite",
+    "network_index": "disabled"
+  },
+  "payload_file_count": 278,
+  "payload_bytes": 8108963,
+  "payload_scope": "vendor source plus offline installation assets; excludes this manifest and SHA256SUMS",
+  "offline_assets_file_count": 17,
+  "offline_assets_bytes": 4922716,
+  "vendor_source_file_count": 261,
+  "vendor_source_bytes": 3186247,
+  "components": [
+    {
+      "name": "virtuoso-bridge",
+      "version": "0.8.0",
+      "source": "AVA-V1 reviewed vendor tree",
+      "license": "MIT",
+      "path": "../vendor/virtuoso-bridge-lite",
+      "sha256": "069a43fe000a907dcc7cafb1ebb35eebef23e6c8c0bacb6ec00727b710937d2f",
+      "hash_scope": "canonical source tree"
+    },
+    {
+      "name": "setuptools",
+      "version": "65.5.0",
+      "source": "Python ensurepip bundled wheel reused from reviewed build cache",
+      "license": "MIT",
+      "path": "wheelhouse/setuptools-65.5.0-py3-none-any.whl",
+      "sha256": "f62ea9da9ed6289bfe868cd6845968a2c854d1427f8548d52cae02a42b4f0356"
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "source": "PyPI wheel downloaded on the connected build host",
+      "license": "MIT",
+      "path": "wheelhouse/wheel-0.45.1-py3-none-any.whl",
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/annotated_types-0.8.0-py3-none-any.whl",
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/beautifulsoup4-4.15.0-py3-none-any.whl",
+      "sha256": "d6f88de62e1d4e38ecb1077eb9724cd0eff29d2a08ca16a401e9b9e93f117cf9"
+    },
+    {
+      "name": "markdownify",
+      "version": "1.2.3",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/markdownify-1.2.3-py3-none-any.whl",
+      "sha256": "a189a0bedfd14009030fde5f85bb6f77c56897cb839b5c25315dd7d4e3e290ba"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.13.5",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/pydantic-2.13.5-py3-none-any.whl",
+      "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+    },
+    {
+      "name": "pydantic-core",
+      "version": "2.46.5",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "49776eab08766a08dfff7012f8b422dcd7e25e43b316eedf0477c24fcfa84b7c"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.3",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "BSD-3-Clause",
+      "path": "wheelhouse/python_dotenv-1.2.3-py3-none-any.whl",
+      "sha256": "904552145e8bfed22162c09dab1c2b9b54fefa7b23ba780f4f26ca0316b0f0d9"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b8bb0864c5a28024fac8a632c443c87c5aa6f215c0b126c449ae1a150412f31d"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    {
+      "name": "soupsieve",
+      "version": "2.9.2",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/soupsieve-2.9.2-py3-none-any.whl",
+      "sha256": "8089a26fd974ca7a1f30276d3d8492ab266ab15af581642dfe8aa162e0c1c823"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "PSF-2.0",
+      "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "source": "reviewed AVA-V1 CPython 3.11 manylinux wheelhouse",
+      "license": "MIT",
+      "path": "wheelhouse/typing_inspection-0.4.4-py3-none-any.whl",
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+    }
+  ],
+  "validation": {
+    "manifest_and_payload_hashes": "passed_on_build_host",
+    "offline_dependency_resolution": "passed_on_build_host_with_x86_64_manylinux2014_target_tags",
+    "editable_install_console_entrypoint": "passed_on_build_host",
+    "direct_cli_smoke": "passed_on_build_host",
+    "clean_ubuntu_24_04_x86_64_container": "not_run_docker_daemon_unavailable",
+    "live_s_host": "not_run",
+    "live_r_c_bridge": "not_run"
+  }
+}

@@ -24,10 +24,12 @@ actual signature first.
 
 ## Runtime boundary
 
+- S is Ubuntu 24.04 x86_64 with Python 3.11 and no Internet access.
 - Use the project virtual environment only; never install into global Python.
-- Install with `uv sync --frozen` after `uv.lock` exists.
-- Invoke BridgeLite directly with `uv run virtuoso-bridge`; AVA-V0 has no
-  launcher or runtime wrapper.
+- On a new checkout, run `./offline/install.sh` once and then activate
+  `.venv`. The installer uses only the checked wheelhouse.
+- Invoke BridgeLite directly with `virtuoso-bridge`; AVA-V0 has no runtime
+  launcher or wrapper.
 - Do not call V1 wrappers, `ava.cli`, `ava_virtuoso_context`, or
   `ava_virtuoso_eval`; none are part of AVA-V0.
 - Keep secrets in `.env` or `~/.virtuoso-bridge/.env`. Never display, copy,
@@ -38,9 +40,9 @@ actual signature first.
 ## Connection sequence
 
 1. Confirm a Bridge configuration exists without printing secret values.
-2. Run `uv run virtuoso-bridge status`.
+2. Run `virtuoso-bridge status`.
 3. If configuration is absent, ask for the SSH target and use
-   `uv run virtuoso-bridge init user@host [-J user@jump]` only after the
+   `virtuoso-bridge init user@host [-J user@jump]` only after the
    user approves the shell action.
 4. Start the bridge only after approval. If it reports `degraded`, present the
    exact generated `load("...")` line for the user to paste into Virtuoso CIW.
