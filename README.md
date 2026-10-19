@@ -44,9 +44,24 @@ S is the former B/Gemma host: Ubuntu 24.04 x86_64, glibc 2.39, with
 then perform the one-time installation without network access:
 
 ```bash
-./offline/install.sh
+bash ./offline/install.sh
 source .venv/bin/activate
 ```
+
+Calling the installer through `bash` also works when an archive or transfer
+tool did not preserve its executable bit.
+
+If `/usr/bin/env: 'bash\r': No such file or directory` appears, a Windows or
+FTP transfer converted LF files to CRLF. Restore the immutable installation
+payload from Git, then run it through Bash:
+
+```bash
+git config core.autocrlf false
+git restore --source=HEAD --worktree -- offline vendor
+bash ./offline/install.sh
+```
+
+Transfer release archives and wheels in binary mode. Do not use FTP ASCII mode.
 
 Start OpenCode from that activated shell. The agent then uses the installed
 VirtuosoBridgeLite command directly; AVA-V0 adds no runtime launcher or wrapper:

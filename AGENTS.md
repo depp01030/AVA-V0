@@ -26,7 +26,7 @@ actual signature first.
 
 - S is Ubuntu 24.04 x86_64 with Python 3.11 and no Internet access.
 - Use the project virtual environment only; never install into global Python.
-- On a new checkout, run `./offline/install.sh` once and then activate
+- On a new checkout, run `bash ./offline/install.sh` once and then activate
   `.venv`. The installer uses only the checked wheelhouse.
 - Invoke BridgeLite directly with `virtuoso-bridge`; AVA-V0 has no runtime
   launcher or wrapper.
